@@ -22,10 +22,10 @@ index 96a87db9f8976d3f1ff09beb9598db31fff72d5b..25a1edf64602a13c07779e58b167a847
                      this.setUsingItem(true);
                      if (!this.isSilent()) {
 diff --git a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-index c1f3086d37e2959bbcc23bc1b779215bc35c99c4..096e80bb71d10c897a20bb3c0b4b761328c9f56e 100644
+index 4d3ee213807171eac04cc8ccd803557c82a45d64..c884988d506ff48a59388fa79843783b94c10828 100644
 --- a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 +++ b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-@@ -1896,4 +1896,14 @@ public class CraftEventFactory {
+@@ -1897,4 +1897,14 @@ public class CraftEventFactory {
          ).callEvent();
      }
      // Paper end - PlayerUseUnknownEntityEvent

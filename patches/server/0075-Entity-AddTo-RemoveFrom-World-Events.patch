@@ -5,7 +5,7 @@ Subject: [PATCH] Entity AddTo/RemoveFrom World Events
 
 
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index 5975cc2fa72609ea5f3e6f99155d6e5bc321a321..0da9a1f428e2fa412de08296e1bafaea0ddd05d0 100644
+index 1c3b12692094c1eaa086ebb2f060b22aaf9d9b39..211f785adf6b8bfc6b974da7898cb2f4359626c9 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
 @@ -2161,6 +2161,7 @@ public class ServerLevel extends Level implements WorldGenLevel {
@@ -24,3 +24,14 @@ index 5975cc2fa72609ea5f3e6f99155d6e5bc321a321..0da9a1f428e2fa412de08296e1bafaea
          }
  
          public void onSectionChange(Entity entity) {
+diff --git a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
+index 6571adf5285ab3f84513c2f5b32ff0523c2cccd6..2653794fc05d9f26d0ec1cc88b06ba530fe23182 100644
+--- a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
++++ b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
+@@ -1849,5 +1849,6 @@ public class CraftEventFactory {
+         }
+ 
+         Bukkit.getPluginManager().callEvent(new EntityRemoveEvent(entity.getBukkitEntity(), cause));
++        (new com.destroystokyo.paper.event.entity.EntityRemoveFromWorldEvent(entity.getBukkitEntity(), entity.getBukkitEntity().getWorld(), com.destroystokyo.paper.event.entity.EntityRemoveFromWorldEvent.RemovalReason.fromBukkitCause(cause))).callEvent(); // Paper - Add RemovalReasonToEntityRemoveFromWorldEvent
+     }
+ }

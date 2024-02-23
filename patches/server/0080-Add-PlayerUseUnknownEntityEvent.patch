@@ -59,12 +59,12 @@ index 37cba1e693490e42908f45dc68e60ac3afebbb49..801e1727bd291f647c91e2c325810ead
  
      @Override
 diff --git a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-index 6571adf5285ab3f84513c2f5b32ff0523c2cccd6..c8f20543cb7f69af010e3fd53f31b7253426f2d0 100644
+index 2653794fc05d9f26d0ec1cc88b06ba530fe23182..090460f38a1c858a3091632def9f18e27c6505fa 100644
 --- a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 +++ b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-@@ -1850,4 +1850,13 @@ public class CraftEventFactory {
- 
+@@ -1851,4 +1851,13 @@ public class CraftEventFactory {
          Bukkit.getPluginManager().callEvent(new EntityRemoveEvent(entity.getBukkitEntity(), cause));
+         (new com.destroystokyo.paper.event.entity.EntityRemoveFromWorldEvent(entity.getBukkitEntity(), entity.getBukkitEntity().getWorld(), com.destroystokyo.paper.event.entity.EntityRemoveFromWorldEvent.RemovalReason.fromBukkitCause(cause))).callEvent(); // Paper - Add RemovalReasonToEntityRemoveFromWorldEvent
      }
 +    // Paper start - PlayerUseUnknownEntityEvent
 +    public static void callPlayerUseUnknownEntityEvent(net.minecraft.world.entity.player.Player player, net.minecraft.network.protocol.game.ServerboundInteractPacket packet, InteractionHand hand, @Nullable net.minecraft.world.phys.Vec3 vector) {

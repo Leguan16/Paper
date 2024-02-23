@@ -50,10 +50,10 @@ index b83af374a33a66a6ceeca119b961eea883bba41c..175b965c92b8b8be9c671e1ee478afa9
                              for (int k = 0; k < 5; ++k) {
                                  worldserver.sendParticles(ParticleTypes.SPLASH, (double) blockposition.getX() + worldserver.random.nextDouble(), (double) (blockposition.getY() + 1), (double) blockposition.getZ() + worldserver.random.nextDouble(), 1, 0.0D, 0.0D, 0.0D, 1.0D);
 diff --git a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-index 52c1d39f494ba441bc93382d895679bcd15fcbde..cd6ee371910328d4ab6f4a018fa0e4a48dbc7982 100644
+index e54d807e124a80d4772942462dd8b702589896ca..ecf8910cd78c0293c8cb4b9b79c53ed3eae507ca 100644
 --- a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 +++ b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-@@ -2109,6 +2109,32 @@ public class CraftEventFactory {
+@@ -2110,6 +2110,32 @@ public class CraftEventFactory {
      }
      // Paper end
  
