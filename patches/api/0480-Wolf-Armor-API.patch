@@ -1,0 +1,41 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: leguan <longboard.noah@gmail.com>
+Date: Mon, 27 May 2024 21:46:55 +0200
+Subject: [PATCH] Wolf Armor API
+
+
+diff --git a/src/main/java/org/bukkit/entity/Wolf.java b/src/main/java/org/bukkit/entity/Wolf.java
+index 4b84c04675775e2a606630b00de8afe51665cebc..1767544f5d39aa1144ccb9e6a24e8edeea8cff9c 100644
+--- a/src/main/java/org/bukkit/entity/Wolf.java
++++ b/src/main/java/org/bukkit/entity/Wolf.java
+@@ -5,6 +5,7 @@ import org.bukkit.DyeColor;
+ import org.bukkit.Keyed;
+ import org.bukkit.NamespacedKey;
+ import org.bukkit.Registry;
++import org.bukkit.inventory.ItemStack;
+ import org.jetbrains.annotations.NotNull;
+ 
+ /**
+@@ -89,6 +90,22 @@ public interface Wolf extends Tameable, Sittable, io.papermc.paper.entity.Collar
+      */
+     void setVariant(@NotNull Variant variant);
+ 
++    // Paper start - Wolf armor API
++
++    /**
++     * Gets the current armor of the wolf.
++     *
++     * @return the current armor equipped by the wolf, null if wolf has no armor equipped.
++     */
++    ItemStack getArmor();
++
++    /**
++     * Sets the armor of the wolf.
++     * @param armor armor to set.
++     */
++    void setArmor(ItemStack armor);
++    // Paper end - Wolf armor API
++
+     /**
+      * Represents the variant of a wolf.
+      */

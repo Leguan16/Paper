@@ -1,0 +1,38 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: leguan <longboard.noah@gmail.com>
+Date: Mon, 27 May 2024 21:45:52 +0200
+Subject: [PATCH] Wolf Armor API
+
+
+diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftWolf.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftWolf.java
+index 86574da257731de7646a712ed73384955fe35aa3..6de87d5543df8562340cf77c13095a89121f10f3 100644
+--- a/src/main/java/org/bukkit/craftbukkit/entity/CraftWolf.java
++++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftWolf.java
+@@ -1,5 +1,7 @@
+ package org.bukkit.craftbukkit.entity;
+ 
++import com.destroystokyo.paper.MaterialSetTag;
++import com.destroystokyo.paper.MaterialTags;
+ import com.google.common.base.Preconditions;
+ import net.minecraft.core.Holder;
+ import net.minecraft.core.registries.Registries;
+@@ -78,6 +80,19 @@ public class CraftWolf extends CraftTameableAnimal implements Wolf {
+         this.getHandle().setVariant(CraftVariant.bukkitToMinecraftHolder(variant));
+     }
+ 
++    // Paper start
++    @Override
++    public org.bukkit.inventory.ItemStack getArmor() {
++        return this.getHandle().getBodyArmorItem().getBukkitStack();
++    }
++
++    @Override
++    public void setArmor(final org.bukkit.inventory.ItemStack armor) {
++        Preconditions.checkArgument(MaterialTags.);
++        this.getHandle().setBodyArmorItem(org.bukkit.craftbukkit.inventory.CraftItemStack.asNMSCopy(armor));
++    }
++    // Paper end
++
+     public static class CraftVariant implements Variant, Handleable<WolfVariant> {
+ 
+         public static Variant minecraftToBukkit(WolfVariant minecraft) {
